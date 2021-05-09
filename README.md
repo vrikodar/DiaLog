@@ -9,3 +9,7 @@ DiaLog
             $ cd DiaLog
             $ chmod +x setup
             $ ./setup
+
+# DiaLog Config File
+
+**DiaLog depends on dia.conf file to determine the service-type and log-file path to analyse**
