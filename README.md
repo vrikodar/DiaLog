@@ -25,3 +25,20 @@ DiaLog
 **config file has the above entery by Default**
 
 *Note:a user may add more than one enteries ....also note that currently only log analysis of standard apache2 access.log file is supported but soon features for analysing DNS log files and other services will be added*
+
+# What Does DiaLog Do ?
+
+**Nothing Like machine Learning is Going on here**
+
+*Following with the current status and configurations loaded*
+            
+            #1) DiaLog searches For Frequencies of all the IP addresses accessing your server ie In the very First step it checks How many Times an IP address is appearing in the Log File to Determine the number of Total Requests made by that IP
+            
+            #2) In the second step DiaLog Breaks Down the Requests and Displays what resource on the web-server was Tried to access by the same IP more than 5 times ....you can also change this Frequency in weblogger.py file with a simple sed command below
+            
+            #3) All the Results found are Displayed on the Terminal window ...tommorow a small piece of code to add the Output to a text File will be added
+
+
+# Running DiaLog
+
+
