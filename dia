@@ -40,8 +40,8 @@ logo = '''           ____,'`-,
 '''
 
 print(colored(logo, 'green', attrs=['bold']))
+print(colored("\nDiaLog v(1.1)....\n", 'red', attrs=['bold']))
 time.sleep(1.5)
-print(colored("\nDiscoLog v(1.1)....\n", 'red', attrs=['bold']))
 os.system('clear')
 os_name = platform.system()
 
