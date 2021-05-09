@@ -52,6 +52,7 @@ DiaLog
   
                     $ ./dia 192.168.43.179
 
+![Capture](https://github.com/SxNade/DiaLog/blob/main/extras/dia.gif)
 
 # Giving custom path of conf File on the Go
 
