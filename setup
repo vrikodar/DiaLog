@@ -1,0 +1,26 @@
+#!/bin/bash
+
+#Just a simple setup script for DiaLog ::: that installs all the dependencies Required!
+
+if [ ${UID} -ne 0 ]
+then
+    echo "[*] Please run the setup script as root"
+    exit
+fi
+
+
+function pip_install() {
+    apt install python3-pip -y
+    if [ $? -eq 0 ]
+    then
+        echo "[+] pip3 install/check complete"
+    else
+        echo "[!] Error while checking/installing pip3"
+        exit
+    fi
+}
+
+pip_install
+
+sudo pip3 install termcolor
+sudo pip3 install pathlib
