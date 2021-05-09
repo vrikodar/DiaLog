@@ -22,4 +22,6 @@ DiaLog
 
                     web:/var/log/apache2/access.log
 
+**config file has the above entery by Default**
+
 *Note:you may add more than one enteries ....also note that currently only log analysis of apache access.log file is supported but soon features for analysing DNS log files and other services will be added*
