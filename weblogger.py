@@ -51,15 +51,14 @@ def mal_ip(log_file, white_ip):
     final_ip_num_list = counter_list(sorted_ips, data)
     frequ_analyse(final_ip_num_list)
 
-
 def list_tup_mal_req(file):
     with open(file, 'r') as log_file:
         full_req_list = []
         for line in log_file.readlines():
             data2 = line.strip()
-            req = re.findall(r"(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) \- \- \[.*](.*) HTTP/1.1", data2)
-            #print(req[0])
-            full_req_list.append(req[0])
+            if len(data2) > 0:
+                req = re.findall(r"(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) \- \- \[.*](.*) HTTP/1.1", data2)
+                full_req_list.append(req[0])
     return full_req_list
 
 
