@@ -9,6 +9,23 @@ DiaLog
             $ cd DiaLog
             $ chmod +x setup
             $ ./setup
+            
+
+
+# Running DiaLog
+
+            # Syntax
+                
+                $ chmod +x dia
+                $ ./dia <white_ip>
+  
+  *The white_ip is the IP address of your server which you want DiaLog to Ignore*
+  
+  * If the IP address of my Server is **192.168.43.179** then my DiaLog command would Look Like this *
+  
+                    $ ./dia 192.168.43.179
+
+![Capture](https://github.com/SxNade/DiaLog/blob/main/extras/dia.gif)
 
 # DiaLog Config File
 
@@ -37,22 +54,6 @@ DiaLog
             #2) In the second step DiaLog Breaks Down the Requests and Displays what resource on the web-server was Tried to access by the same IP more than 5 times ....you can also change this Frequency in weblogger.py file with a simple sed command below
             
             #3) All the Results found are Displayed on the Terminal window ...tommorow a small piece of code to add the Output to a text File will be added
-
-
-# Running DiaLog
-
-            # Syntax
-                
-                $ chmod +x dia
-                $ ./dia <white_ip>
-  
-  *The white_ip is the IP address of your server which you want DiaLog to Ignore*
-  
-  * If the IP address of my Server is **192.168.43.179** then my DiaLog command would Look Like this *
-  
-                    $ ./dia 192.168.43.179
-
-![Capture](https://github.com/SxNade/DiaLog/blob/main/extras/dia.gif)
 
 # Giving custom path of conf File on the Go
 
