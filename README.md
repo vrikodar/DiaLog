@@ -13,3 +13,13 @@ DiaLog
 # DiaLog Config File
 
 **DiaLog depends on dia.conf file to determine the service-type and log-file path to analyse**
+
+                  # Format of conf File is                  
+                  
+                  service:path-of-log-file
+                  
+**So For example we are checking apache2 log file in /var/log/apache2/access.log our config file contents would look like this**
+
+                    web:/var/log/apache2/access.log
+
+*Note:you may add more than one enteries ....also note that currently only log analysis of apache access.log file is supported but soon features for analysing DNS log files and other services will be added*
