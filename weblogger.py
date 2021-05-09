@@ -61,10 +61,24 @@ def list_tup_mal_req(file):
                 full_req_list.append(req[0])
     return full_req_list
 
-
 def mal_req_analysis(file):
+    os.system('touch requests.txt')
     req_tup_num_list = list_tup_mal_req(file)
     for tup_req in req_tup_num_list:
         IP, REQ = tup_req[0], tup_req[1]
+        f = open("requests.txt", "a")
         if int(req_tup_num_list.count(tup_req)) > 5:
-            print(f"{RED}{IP}{WHITE} → {GREEN}{REQ}{WHITE} {RED}{req_tup_num_list.count(tup_req)}{WHITE} times")
+            f.write(f"{IP}:{REQ}:{req_tup_num_list.count(tup_req)}")
+            f.write("\n")
+            f.close()
+            #print(f"{RED}{IP}{WHITE} → {GREEN}{REQ}{WHITE} {RED}{req_tup_num_list.count(tup_req)}{WHITE} times")
+    os.system('cat requests.txt | sort -u > requests2.txt')
+    os.system('rm requests.txt')
+
+    with open('requests2.txt', 'r') as file_req_num:
+        for line  in file_req_num.readlines():
+            req_num_val = line.strip()
+            IP, REQ, NUM = req_num_val.split(":")
+            print(f"{RED}{IP}{WHITE} → {GREEN}{REQ}{WHITE} {RED}{NUM}{WHITE} times")
+    print("\n")
+
