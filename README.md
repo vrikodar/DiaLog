@@ -63,3 +63,8 @@ DiaLog
 # More Info
 
 **For More Specific Info about DiaLog Please Read the man.txt File in extras**
+
+https://raw.githubusercontent.com/SxNade/DiaLog/main/extras/man.txt
+
+*This man.txt File will be updated soon*
+
