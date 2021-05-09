@@ -81,6 +81,6 @@ def mal_req_analysis(file):
             req_num_val = line.strip()
             IP, REQ, NUM = req_num_val.split(":")
             print(f"{RED}{IP}{WHITE} → {GREEN}{REQ}{WHITE} {RED}{NUM}{WHITE} times")
-    print(f"[{GREEN}+{WHITE}] Results have been saved to ${GREEN}requests2.txt${WHITE} file")
+    print(f"\n[{GREEN}+{WHITE}] Results have been saved to {GREEN}requests2.txt{WHITE} file")
     print("\n")
 
