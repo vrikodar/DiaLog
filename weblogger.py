@@ -9,7 +9,6 @@ WHITE = "\33[0m"
 GREEN = '\033[1;32;48m'
 
 #some methods as functions to test on web server Log File :: mainly apache2 web server!
-exit_flag = 1
 
 def sort_list(list, ip):
     new_list = []
@@ -29,9 +28,6 @@ def counter_list(sorted_ip_list, data):
 
 def counter_reque(sorted_req_list, full_req):
     req_num_list = []
-    #req_count = Counter()
-    #req_count.update(data)
-    #print(data)
     for req in sorted_req_list:
          num_count = full_req.count(req)
          req_num_list.append(f'{req}|{num_count}') 
@@ -52,9 +48,7 @@ def mal_ip(log_file, white_ip):
     list_ips = re.findall(r"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}", data)
     sorted_ips = sort_list(list_ips, white_ip)
     print("\n")
-    # dict = counter_dict(sorted_ips, data)
     final_ip_num_list = counter_list(sorted_ips, data)
-    #print(final_ip_num_list)
     frequ_analyse(final_ip_num_list)
 
 
