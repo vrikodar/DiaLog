@@ -53,11 +53,11 @@ DiaLog
                     $ ./dia 192.168.43.179
 
 
-# Giving custom path of log File on the Go
+# Giving custom path of conf File on the Go
 
-**If you want to give custom path of apache2 Log File on the go then the Syntax is as Follows**
+**If you want to give custom path of conf File on the go then the Syntax is as Follows**
 
-          $ ./dia <custom_file_path> 192.168.43.179
+          $ ./dia <custom_conf_file_path> 192.168.43.179
 
 
 # More Info
