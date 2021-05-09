@@ -106,12 +106,12 @@ try:
    else:
       white_ip = sys.argv[1]
       print(f"\n[{GREEN}+{WHITE}] Going with the default path")
-      file = log_file_exists("disco.conf")
+      file = log_file_exists("dia.conf")
       targets = read_file(file)
       rearrange(targets)
 except IndexError:
    print(f"\n[{GREEN}+{WHITE}] Going with the default path")
-   file = log_file_exists("disco.conf")
+   file = log_file_exists("dia.conf")
    targets = read_file(file)
    rearrange(targets)
 
