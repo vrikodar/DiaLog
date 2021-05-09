@@ -1,0 +1,119 @@
+#!/usr/bin/python3
+
+import weblogger
+from termcolor import colored
+import time
+import platform
+import pathlib
+import sys
+import os
+
+
+RED = '\033[1;31;48m'
+WHITE = "\33[0m"
+GREEN = '\033[1;32;48m'
+
+logo = '''           ____,'`-, 
+      _,--'   ,/::.; 
+   ,-'       ,/::,' `---.___        ___,_ 
+   |       ,:';:/        ;'"`;"`--./ ,-^.;--. 
+   |:     ,:';,'         '         `.   ;`   `-. 
+    \:.,:::/;/ -:.                   `  | `     `-. 
+     \:::,'//__.;  ,;  ,  ,  :.`-.   :. |  ;       :. 
+      \,',';/O)^. :'  ;  :   '__` `  :::`.       .:' ) 
+      |,'  |\__,: ;      ;  '/O)`.   :::`;       ' ,' 
+           |`--''            \__,' , ::::(       ,' 
+           `    ,            `--' ,: :::,'\   ,-' 
+            | ,;         ,    ,::'  ,:::   |,' 
+            |,:        .(          ,:::|   ` 
+            ::'_   _   ::         ,::/:| 
+           ,',' `-' \   `.      ,:::/,:| 
+          | : _  _   |   '     ,::,' ::: 
+          | \ O`'O  ,',   ,    :,'   ;:: 
+           \ `-'`--',:' ,' , ,,'      :: 
+            ``:.:.__   ',-','        ::' 
+               `--.__, ,::.         ::' 
+                   |:  ::::.       ::' 
+                   |:  ::::::    ,::' 
+        
+'''
+
+print(colored(logo, 'green', attrs=['bold']))
+time.sleep(1.5)
+print(colored("\nDiscoLog v(1.1)....\n", 'red', attrs=['bold']))
+os.system('clear')
+os_name = platform.system()
+
+
+print(f"[{GREEN}+{WHITE}] Getting operating-system info: {RED}{os_name}{WHITE}\n")
+if not "linux" in os_name.lower():
+     print(f"[{RED}!{WHITE}] This program is intended for analysing log files on linux systems only.\n")
+     sys.exit()
+
+print(f"[{GREEN}+{WHITE}] Searching for conf File...")
+
+def log_file_exists(path):
+   search = pathlib.Path(path)
+   if search.exists():
+      time.sleep(1)
+      print(f"[{GREEN}+{WHITE}] Found\n")
+   else:
+      time.sleep(1)
+      print(f"[{RED}!{WHITE}] Not Found")
+      print(f"[{RED}!{WHITE}] Looks like apache2 is not installed on the system\n")
+      sys.exit()
+   return path
+
+def read_file(file_name):
+   print(f"\n[{GREEN}+{WHITE}] Reading conf file [{file_name}]\n")
+   list_actions = []
+   with open(file_name, 'r') as file:
+      for line in file.readlines():
+         item = line.strip()
+         if len(item) > 0:
+            list_actions.append(item)
+   return list_actions
+
+def dns_analysis(file):
+   print(f"[{GREEN}+{WHITE}] Reading Logs now......")
+
+def web_analysis(file):
+   print(f"[{GREEN}+{WHITE}] Reading Logs now......")
+   weblogger.mal_ip(file, white_ip)
+   weblogger.mal_req_analysis(file)
+
+def start_analysis(service, file):
+   print(f"\n[{GREEN}+{WHITE}] Initiating log file analysis {RED}SERVICE:{WHITE} [{service}] {RED}FILE:{WHITE} [{file}]")
+   time.sleep(1)
+   print(colored("=======================================================================================================================================\n", 'blue', attrs=['bold']))
+   if service == "dns":
+      dns_analysis(file)
+   if service == "web":
+      web_analysis(file)
+
+def rearrange(target_list):
+   for target in target_list:
+      srvc, fl = target.split(":")
+      #print(f"The data that we have is {srvc} and {fl}")
+      start_analysis(srvc, fl)
+try:
+   if "/" in sys.argv[1]:
+      white_ip = sys.argv[2]
+      print(f"\n[{GREEN}+{WHITE}] Going with the user specified path")
+      file = log_file_exists(sys.argv[1])
+      targets = read_file(file)
+      rearrange(targets)
+   else:
+      white_ip = sys.argv[1]
+      print(f"\n[{GREEN}+{WHITE}] Going with the default path")
+      file = log_file_exists("disco.conf")
+      targets = read_file(file)
+      rearrange(targets)
+except IndexError:
+   print(f"\n[{GREEN}+{WHITE}] Going with the default path")
+   file = log_file_exists("disco.conf")
+   targets = read_file(file)
+   rearrange(targets)
+
+
+
