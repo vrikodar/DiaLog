@@ -48,3 +48,18 @@ DiaLog
   
   *The white_ip is the IP address of your server which you want DiaLog to Ignore*
   
+  * If the IP address of my Server is **192.168.43.179** then my DiaLog command would Look Like this *
+  
+                    $ ./dia 192.168.43.179
+
+
+# Giving custom path of log File on the Go
+
+**If you want to give custom path of apache2 Log File on the go then the Syntax is as Follows**
+
+          $ ./dia <custom_file_path> 192.168.43.179
+
+
+# More Info
+
+**For More Specific Info about DiaLog Please Read the man.txt File in extras**
