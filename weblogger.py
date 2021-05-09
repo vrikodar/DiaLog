@@ -58,7 +58,7 @@ def list_tup_mal_req(file):
         for line in log_file.readlines():
             data2 = line.strip()
             if len(data2) > 0:
-                req = re.findall(r"(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) \- \- \[.*](.*) HTTP/1.1", data2)
+                req = re.findall(r"(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) \- \- \[.*] \"(.*) HTTP/1.1", data2)
                 full_req_list.append(req[0])
     return full_req_list
 
