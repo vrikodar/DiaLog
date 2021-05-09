@@ -27,6 +27,8 @@ DiaLog
 
 ![Capture](https://github.com/SxNade/DiaLog/blob/main/extras/dia.gif)
 
+**After Every Run Remove results2.txt File or Make a Backup of it and then remove** 
+
 # DiaLog Config File
 
 **DiaLog depends on dia.conf file to determine the service-type and log-file path to analyse**
