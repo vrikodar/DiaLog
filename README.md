@@ -41,4 +41,10 @@ DiaLog
 
 # Running DiaLog
 
-
+            # Syntax
+                
+                $ chmod +x dia
+                $ ./dia <white_ip>
+  
+  *The white_ip is the IP address of your server which you want DiaLog to Ignore*
+  
