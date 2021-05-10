@@ -63,24 +63,28 @@ def list_tup_mal_req(file):
     return full_req_list
 
 def mal_req_analysis(file):
-    os.system('touch requests.txt')
+    uniq_time = os.popen('date +%T').read().strip()
+    os.system(f'touch requests{uniq_time}.txt')
     req_tup_num_list = list_tup_mal_req(file)
+    #print(req_tup_num_list)
     for tup_req in req_tup_num_list:
         IP, REQ = tup_req[0], tup_req[1]
-        f = open("requests.txt", "a")
-        if int(req_tup_num_list.count(tup_req)) > 5:
+        f = open(f"requests{uniq_time}.txt", "a")
+        if int(req_tup_num_list.count(tup_req)) >= 5:
             f.write(f"{IP}:{REQ}:{req_tup_num_list.count(tup_req)}")
             f.write("\n")
             f.close()
             #print(f"{RED}{IP}{WHITE} → {GREEN}{REQ}{WHITE} {RED}{req_tup_num_list.count(tup_req)}{WHITE} times")
-    os.system('cat requests.txt | sort -u > requests2.txt')
-    os.system('rm requests.txt')
+    
+    os.system(f'cat requests{uniq_time}.txt | sort -u > requests2{uniq_time}.txt')
+    os.system(f'rm requests{uniq_time}.txt')
 
-    with open('requests2.txt', 'r') as file_req_num:
+    with open(f'requests2{uniq_time}.txt', 'r') as file_req_num:
         for line  in file_req_num.readlines():
             req_num_val = line.strip()
             IP, REQ, NUM = req_num_val.split(":")
             print(f"{RED}{IP}{WHITE} → {GREEN}{REQ}{WHITE} {RED}{NUM}{WHITE} times")
-    print(f"\n[{GREEN}+{WHITE}] Results have been saved to {GREEN}requests2.txt{WHITE} file")
+    print(f"\n[{GREEN}+{WHITE}] Results have been saved to {GREEN}requests2{uniq_time}.txt{WHITE} file")
     print("\n")
+    time.sleep(2)
 
