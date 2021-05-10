@@ -20,6 +20,8 @@ DiaLog
 
 *This behaviour can be changed by editing the weblogger.py File as Shown in the infographic Below*
 
+*The change needs to be made in the mal_req_analysis function*
+
 ![Capture](https://github.com/SxNade/DiaLog/blob/main/extras/change.gif)
 
 # Running DiaLog
