@@ -16,8 +16,11 @@ DiaLog
 
 **so if a Log file contains requests made to a resource less than 5 times it will be Ingnored**
 
-*This behaviour can be changed by editing the weblogger.py File as Shown in the image Below*
+**Don't Change to 0!**
 
+*This behaviour can be changed by editing the weblogger.py File as Shown in the infographic Below*
+
+![Capture](https://github.com/SxNade/DiaLog/blob/main/extras/change.gif)
 
 # Running DiaLog
 
