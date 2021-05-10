@@ -10,6 +10,13 @@ DiaLog
             $ chmod +x setup
             $ ./setup
             
+# A VERY VERY IMPORTANT NOTE
+
+**BY DEFAULT DiaLog will Display and Log Requests of Resource if they were made more than 5 times**
+
+**so if a Log file contains requests made to a resource less than 5 times it will be Ingnored**
+
+*This behaviour can be changed by editing the weblogger.py File as Shown in the image Below*
 
 
 # Running DiaLog
