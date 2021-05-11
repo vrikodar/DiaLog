@@ -61,7 +61,7 @@ DiaLog
 
 **A new Feature has be added to DiaLog that Allows the user to Gather some Passive Info about the Malicious IP's Discovered from the Log Ananlysis**
 
-![Capture]()
+![Capture](https://github.com/SxNade/DiaLog/blob/main/extras/jtrbugd.gif)
 
 *The Passive Info Gathered About The HOSTS Include*
 
