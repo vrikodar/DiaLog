@@ -57,6 +57,22 @@ DiaLog
 
 *Note:a user may add more than one enteries ....also note that currently only log analysis of standard apache2 access.log file is supported but soon features for analysing DNS log files and other services will be added*
 
+# New Feature
+
+**A new Feature has be added to DiaLog that Allows the user to Gather some Passive Info about the Malicious IP's Discovered from the Log Ananlysis**
+
+![Capture]()
+
+*The Passive Info Gathered About The HOSTS Include*
+
+            #1) Basic Info such as RDNS and Location Info
+            #2) Open Ports on The Target Host
+            #3) Potentical CVE's That the Target Host may be Vulnerable to
+
+**This Has also been Hosted on a Different Project named JitterBug Follow the Link Below**
+
+**-->** https://github.com/SxNade/JitterBug
+
 # What Does DiaLog Do ?
 
 **Nothing Like machine Learning is Going on here**
