@@ -12,6 +12,10 @@ DiaLog
             
 # A VERY VERY IMPORTANT NOTE
 
+```
+DiaLog is currently undergoing some maintenance an even better and faster version of DiaLog will be released soon
+```
+
 **BY DEFAULT DiaLog will Display and Log Requests of Resource if they were made more than 5 times**
 
 **so if a Log file contains requests made to a resource less than 5 times it will be Ingnored**
